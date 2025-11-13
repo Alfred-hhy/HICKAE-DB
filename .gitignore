@@ -1,0 +1,36 @@
+# 1. 数据集目录 (Dataset Directories - Must Ignore)
+database/
+database_small/
+maildir/
+
+# 2. 大型原始数据和压缩包 (Archives - Must Ignore)
+*.tar.gz
+*.tar.xz
+*.zip
+*.rar
+
+# 3. 基准测试结果和日志 (Generated Results & Logs - Must Ignore)
+*.log
+benchmark_results/
+*.csv
+*.png  # 仅当图片为衍生结果图时
+
+# 4. 构建生成文件 (Build Artifacts - Must Ignore)
+# 这是 CMake 自动生成的缓存文件，包含本地路径，必须忽略
+CMakeCache.txt [cite: 5]
+# 这是 CMake 存放中间编译文件的目录，必须忽略
+CMakeFiles/ [cite: 5]
+# 编译生成的动态/静态库和对象文件
+*.o
+*.lo
+*.so
+*.a
+# 其他 CMake 生成的文件
+cmake_install.cmake
+install_manifest.txt
+
+# 5. 核心构建文件 (Core Build Files - DO NOT Ignore)
+# 注意：以下文件不应出现在 .gitignore 中，请确保它们被 Git 追踪：
+# CMakeLists.txt
+# Makefile (手写的)
+# 所有 .sh, .py, .go 脚本
